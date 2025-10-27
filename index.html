@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A minimalist songlist PWA for managing and searching your favorite songs"
+    />
+    <meta name="theme-color" content="#e0e5ec" />
+    <title>HDT SongList</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/imgs/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/imgs/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/imgs/apple-touch-icon.png"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <h1 class="title">SongList</h1>
+          <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Controls Section -->
+      <div class="controls">
+        <!-- Search Bar -->
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search by title or artist..."
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button id="showFavorites" class="btn btn-filter">
+            Show Favorites
+          </button>
+          <button id="sortToggle" class="btn btn-secondary">
+            Sort by Title
+          </button>
+          <button id="clearAll" class="btn btn-danger">Clear All</button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <span id="songCount" class="stat-item">0 songs</span>
+        <span id="favoriteCount" class="stat-item">0 favorites</span>
+      </div>
+
+      <!-- Song List -->
+      <div id="songList" class="song-list">
+        <div class="empty-state">
+          <p>Loading songs...</p>
+          <p class="empty-subtitle">Songs will load from assets/songs.json</p>
+        </div>
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <button
+        id="scrollToTop"
+        class="scroll-top hidden"
+        aria-label="Scroll to top"
+      >
+        ↑
+      </button>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Built by Keith</p>
+      </footer>
+    </div>
+
+    <!-- App Script -->
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

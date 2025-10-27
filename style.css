@@ -1,0 +1,631 @@
+/* ===================================
+   CSS Variables for Theming
+   =================================== */
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #e0e5ec;
+  --bg-secondary: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --text-muted: #95a5a6;
+  --accent: #3498db;
+  --accent-hover: #2980b9;
+  --danger: #e74c3c;
+  --danger-hover: #c0392b;
+  --success: #2ecc71;
+  --favorite: #f39c12;
+
+  /* Neumorphism Shadows */
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+  --shadow-inset-light: rgba(255, 255, 255, 0.7);
+  --shadow-inset-dark: rgba(163, 177, 198, 0.7);
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Colors */
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --text-primary: #eaeaea;
+  --text-secondary: #a0a0a0;
+  --text-muted: #707070;
+  --accent: #0f4c75;
+  --accent-hover: #1b6ca8;
+  --danger: #c0392b;
+  --danger-hover: #a93226;
+  --success: #27ae60;
+  --favorite: #f39c12;
+
+  /* Dark Neumorphism Shadows */
+  --shadow-light: #252540;
+  --shadow-dark: #0f0f1c;
+  --shadow-inset-light: rgba(37, 37, 64, 0.7);
+  --shadow-inset-dark: rgba(15, 15, 28, 0.7);
+}
+
+/* ===================================
+   Global Styles
+   =================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===================================
+   Container & Layout
+   =================================== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================================
+   Header
+   =================================== */
+.header {
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: var(--bg-primary);
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.icon-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  transition: var(--transition);
+}
+
+.icon-btn:hover {
+  box-shadow: 2px 2px 4px var(--shadow-dark), -2px -2px 4px var(--shadow-light);
+}
+
+.icon-btn:active {
+  box-shadow: inset 3px 3px 6px var(--shadow-inset-dark),
+    inset -3px -3px 6px var(--shadow-inset-light);
+}
+
+/* ===================================
+   Controls Section
+   =================================== */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.upload-section {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.upload-btn {
+  flex: 1;
+  min-width: 150px;
+  padding: 1rem 1.5rem;
+  background: var(--bg-primary);
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.upload-btn:hover {
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+
+.upload-btn:active {
+  box-shadow: inset 4px 4px 8px var(--shadow-inset-dark),
+    inset -4px -4px 8px var(--shadow-inset-light);
+}
+
+/* ===================================
+   Buttons
+   =================================== */
+.btn {
+  padding: 1rem 1.5rem;
+  background: var(--bg-primary);
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+
+.btn:active {
+  box-shadow: inset 4px 4px 8px var(--shadow-inset-dark),
+    inset -4px -4px 8px var(--shadow-inset-light);
+}
+
+.btn-secondary {
+  flex: 1;
+  min-width: 150px;
+}
+
+.btn-filter {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-filter:hover {
+  background: var(--accent-hover);
+}
+
+.btn-filter.active {
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: var(--danger-hover);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ===================================
+   Search Bar
+   =================================== */
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--bg-primary);
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  box-shadow: inset 4px 4px 8px var(--shadow-inset-dark),
+    inset -4px -4px 8px var(--shadow-inset-light);
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: inset 6px 6px 12px var(--shadow-inset-dark),
+    inset -6px -6px 12px var(--shadow-inset-light);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ===================================
+   Stats
+   =================================== */
+.stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+
+.stat-item {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ===================================
+   Song List
+   =================================== */
+.song-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+}
+
+.empty-state p {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted) !important;
+}
+
+/* ===================================
+   Song Item
+   =================================== */
+.song-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-primary);
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  transition: var(--transition);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.song-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
+}
+
+.song-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.song-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.song-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.song-id {
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.song-artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.favorite-btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  transition: var(--transition);
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.favorite-btn.active {
+  filter: grayscale(0%);
+  opacity: 1;
+  animation: heartbeat 0.5s ease;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ===================================
+   Scroll to Top Button
+   =================================== */
+.scroll-top {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
+  transition: var(--transition);
+  z-index: 100;
+}
+
+.scroll-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.scroll-top:active {
+  transform: translateY(-2px);
+}
+
+.scroll-top.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+/* ===================================
+   Load More Button
+   =================================== */
+.load-more-container {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.load-more-btn {
+  min-width: 250px;
+  font-size: 1rem;
+  padding: 1.2rem 2rem;
+  background: var(--accent);
+  color: white;
+  transition: var(--transition);
+}
+
+.load-more-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ===================================
+   SweetAlert2 Custom Styling
+   =================================== */
+.swal2-popup {
+  background: var(--bg-primary) !important;
+  border-radius: 20px !important;
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light) !important;
+}
+
+.swal2-title {
+  color: var(--text-primary) !important;
+}
+
+.swal2-html-container {
+  color: var(--text-secondary) !important;
+}
+
+.swal2-confirm {
+  background: var(--accent) !important;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light) !important;
+  border-radius: 10px !important;
+}
+
+.swal2-cancel {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light) !important;
+  border-radius: 10px !important;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
+  .header-content {
+    padding: 1rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .icon-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .upload-section,
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn,
+  .upload-btn,
+  .btn-secondary {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .stats {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .song-item {
+    padding: 1rem;
+  }
+
+  .song-title {
+    font-size: 1rem;
+  }
+
+  .song-meta {
+    font-size: 0.85rem;
+  }
+
+  .favorite-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .scroll-top {
+    bottom: 5rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .song-meta {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+/* ===================================
+   Smooth Scrolling
+   =================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===================================
+   Loading State
+   =================================== */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.loading::after {
+  content: "...";
+  animation: dots 1.5s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  60%,
+  100% {
+    content: "...";
+  }
+}

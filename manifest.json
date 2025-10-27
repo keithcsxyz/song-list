@@ -1,0 +1,35 @@
+{
+  "name": "Songbook",
+  "short_name": "Songbook",
+  "description": "A minimalist songlist PWA for managing and searching your favorite songs",
+  "start_url": "/song-book/",
+  "display": "standalone",
+  "background_color": "#e0e5ec",
+  "theme_color": "#e0e5ec",
+  "orientation": "portrait-primary",
+  "scope": "/song-book/",
+  "icons": [
+    {
+      "src": "assets/imgs/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/imgs/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/imgs/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["music", "entertainment", "utilities"],
+  "screenshots": [],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
