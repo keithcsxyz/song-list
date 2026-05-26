@@ -292,6 +292,7 @@ svg {
   transition: var(--transition);
 }
 
+.favorite-btn svg { width: 24px; height: 24px; }
 .favorite-btn:hover {
   background: var(--bg-page);
   color: var(--text-secondary);
