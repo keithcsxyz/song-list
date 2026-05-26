@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A minimalist songlist PWA for managing and searching your favorite songs"
+    />
+    <meta name="theme-color" content="#f0f2f5" />
+    <title>HDT SongList</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/imgs/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/imgs/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/imgs/apple-touch-icon.png"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Floating Nav & Controls -->
+      <div class="nav-wrapper">
+        <header class="nav-pill">
+          <div class="brand">
+            <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+            </svg>
+            <h1 class="title">HDTSonglist</h1>
+          </div>
+          
+          <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
+            <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+        </header>
+
+        <div class="search-container">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search songs, artists..." autocomplete="off">
+        </div>
+
+        <!-- Compact Sub-controls -->
+        <div class="sub-controls">
+          <div class="action-buttons">
+            <button id="showFavorites" class="btn btn-filter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+              <span>Show Favorites</span>
+            </button>
+            <button id="sortToggle" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" /></svg>
+              <span>Sort by Title</span>
+            </button>
+          </div>
+          <div class="stats">
+            <span id="songCount" class="stat-item">0 songs</span>
+            <span class="stat-divider">•</span>
+            <span id="favoriteCount" class="stat-item">0 favorites</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Song List -->
+      <div id="songList" class="song-list">
+        <div class="empty-state">
+          <p>Loading songs...</p>
+          <p class="empty-subtitle">Songs will load from assets/songs.json</p>
+        </div>
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <button
+        id="scrollToTop"
+        class="scroll-top hidden"
+        aria-label="Scroll to top"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+      </button>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Built by Keith</p>
+      </footer>
+    </div>
+
+    <!-- App Script -->
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
